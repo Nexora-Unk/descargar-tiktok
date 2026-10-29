@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Descargar TikTok sin marca de agua · Nexora</title>
+<style>
+:root{--bg:#0b0d14;--card:#131625;--card2:#1a1e33;--line:#262b40;--tx:#eef0f8;--mu:#9aa1bd;--ac:#7c5cff;--ac2:#22d3ee;--ok:#34d399;--warn:#fbbf24;--err:#fb7185;--g1:rgba(124,92,255,.22);--g2:rgba(34,211,238,.14);--sh:0 10px 30px rgba(0,0,0,.35);--wrap:860px}
+@media (prefers-color-scheme:light){:root{--bg:#f4f5fb;--card:#fff;--card2:#eef0fa;--line:#dfe2f0;--tx:#161a2b;--mu:#5d647f;--g1:rgba(124,92,255,.14);--g2:rgba(34,211,238,.12);--sh:0 8px 24px rgba(40,50,100,.10)}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;background:radial-gradient(700px 380px at 10% -5%,var(--g2),transparent),radial-gradient(800px 420px at 100% 0,var(--g1),transparent),var(--bg);background-attachment:fixed}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+@media(min-width:700px){.wrap{padding:0 24px}}
+.top{background:#0a0612;border-bottom:1px solid #a050f040;padding-top:env(safe-area-inset-top,0px);position:relative}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,transparent,#a050f0,#22d3ee,transparent);opacity:.7}
+.top .wrap{padding-top:14px;padding-bottom:14px}
+.brand{display:inline-flex;flex-direction:column;gap:6px;text-decoration:none;transition:opacity .15s,transform .15s}
+.brand:hover{opacity:.88;transform:translateY(-1px)}
+.brand b{font:italic 900 1.85rem/1 "Segoe UI",system-ui,sans-serif;letter-spacing:-.02em;color:#f4f2ff}
+.brand b i{font-style:italic;background:linear-gradient(120deg,#a050f0,#d726e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{font-size:.6rem;letter-spacing:.34em;color:#8f96b8;text-transform:uppercase}
+.hero{padding:30px 0 10px;text-align:center}
+.chip{display:inline-block;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:99px;border:1px solid var(--line);color:var(--mu);background:var(--card)}
+h1{font-size:clamp(1.7rem,5vw,2.9rem);line-height:1.1;letter-spacing:-.02em;margin:14px 0 8px;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);margin:0 auto;max-width:58ch;font-size:clamp(.95rem,2.4vw,1.1rem)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--sh);margin-top:22px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+textarea,select{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--tx);border-radius:14px;padding:14px;font:inherit;outline:none}
+textarea{resize:vertical;min-height:70px}
+select{padding:9px 12px;width:auto}
+textarea:focus,select:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(124,92,255,.25)}
+button,.btn{cursor:pointer;border:0;border-radius:12px;min-height:46px;padding:11px 18px;font:inherit;font-weight:600;color:#fff;background:linear-gradient(90deg,var(--ac),var(--ac2));display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;transition:transform .15s,filter .15s}
+button:hover{filter:brightness(1.1)}
+button:focus-visible,summary:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--ac2);outline-offset:2px}
+button:disabled{opacity:.55;cursor:wait}
+.sec{background:transparent;color:var(--tx);border:1px solid var(--line)}
+#go{flex:1 1 160px}
+.opts{display:flex;gap:10px 18px;flex-wrap:wrap;margin-top:14px;color:var(--mu);font-size:.88rem;align-items:center}
+.opts label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.opts input{accent-color:var(--ac);width:16px;height:16px}
+.dd{position:relative;display:flex;align-items:center;gap:10px}
+.ddb{min-height:42px;padding:8px 14px;background:var(--card2);color:var(--tx);border:1px solid var(--line);border-radius:12px;gap:10px;font-weight:600}
+.ddb svg{transition:transform .2s;color:var(--ac2)}
+.ddb[aria-expanded="true"]{border-color:var(--ac);box-shadow:0 0 0 3px rgba(124,92,255,.25)}
+.ddb[aria-expanded="true"] svg{transform:rotate(180deg)}
+.ddm{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:min(270px,84vw);list-style:none;margin:0;padding:6px;background:var(--card);border:1px solid var(--ac);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.45);z-index:30}
+.ddm.on{display:block;animation:pop .15s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(-4px)}}
+.ddm li{position:relative;padding:10px 38px 10px 14px;border-radius:11px;cursor:pointer;color:var(--tx);outline:0}
+.ddm li b{display:block;font-size:.93rem}
+.ddm li small{display:block;color:var(--mu);font-size:.78rem}
+.ddm li:hover,.ddm li:focus{background:var(--card2)}
+.ddm li.sel{background:linear-gradient(90deg,rgba(124,92,255,.22),rgba(34,211,238,.14))}
+.ddm li.sel::after{content:"✓";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--ok);font-weight:700}
+.res{display:grid;gap:16px;margin-top:18px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--sh)}
+.top2{display:flex;gap:16px;padding:16px;flex-wrap:wrap}
+.cov{width:150px;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#000;flex:none}
+.inf{flex:1;min-width:220px}
+.au{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.au img{width:40px;height:40px;border-radius:50%;background:var(--line)}
+.au b{display:block}.au span{color:var(--mu);font-size:.85rem}
+.ti{color:var(--tx);opacity:.85;font-size:.95rem;margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.st{display:flex;gap:6px;flex-wrap:wrap}
+.st .chip{padding:3px 10px}
+.dl{padding:0 16px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.dl button{flex-direction:column;gap:0;text-align:center;line-height:1.3}
+.dl small{font-weight:400;opacity:.85;font-size:.76rem}
+.dl .wm,.dl .ct{background:var(--card2);color:var(--tx);border:1px solid var(--line)}
+.dl .au2{background:linear-gradient(135deg,#ec4899,var(--ac))}
+.prog{height:6px;background:var(--line);border-radius:9px;margin:0 16px 14px;overflow:hidden;display:none}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ok),var(--ac2));transition:width .2s}
+.imgs{padding:0 16px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}
+.imgs img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block}
+.err{background:rgba(251,113,133,.1);border:1px solid var(--err);color:var(--err);border-radius:14px;padding:12px 14px;overflow-wrap:anywhere}
+.err .row{margin-top:10px}
+.err button{min-height:38px;padding:6px 14px;font-size:.88rem}
+.load{text-align:center;color:var(--mu)}
+.sp{width:26px;height:26px;border:3px solid var(--line);border-top-color:var(--ac2);border-radius:50%;animation:r .8s linear infinite;margin:0 auto 8px}
+@keyframes r{to{transform:rotate(360deg)}}
+h2{font-size:1.2rem;margin:36px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.grid>div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.grid b{display:block;margin-bottom:4px}.grid p{color:var(--mu);font-size:.88rem;margin:0}
+.hist{display:grid;gap:8px}
+.hi{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 12px;cursor:pointer}
+.hi img{width:36px;height:48px;object-fit:cover;border-radius:8px;background:var(--line)}
+.hi span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.9rem}
+.hi small{color:var(--mu)}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin:8px 0 0;font-size:.92rem}
+footer{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--mu);font-size:.85rem;text-align:center;padding:30px 16px calc(34px + env(safe-area-inset-bottom,0px))}
+footer .f{display:flex;gap:12px;align-items:center}
+footer b{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+footer a{display:flex;transition:transform .15s}footer a:hover{transform:scale(1.12)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ok);color:#04130c;padding:10px 16px;border-radius:12px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;max-width:90%;text-align:center;z-index:9}
+.toast.on{opacity:1}
+@media(max-width:560px){.cov{width:100%;aspect-ratio:16/10}.dl{grid-template-columns:1fr}.row button,.row .btn{flex:1 1 45%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" id="brand" href="/" aria-label="Ir a la página principal de Nexora"><b>NEX<i>ORA</i></b><small>Tools &amp; Resources</small></a>
+</div></nav>
+
+<main class="wrap">
+<section class="hero">
+  <span class="chip">Sin registro · Gratis · HD</span>
+  <h1>Descargar TikTok sin marca de agua</h1>
+  <p class="sub">Pegá uno o varios enlaces, elegí la calidad y descargá el video, el audio MP3, la portada o las fotos.</p>
+</section>
+
+<div class="box">
+  <textarea id="u" placeholder="Pegá aquí el enlace de TikTok (uno por línea para descargar varios)" aria-label="Enlaces de TikTok"></textarea>
+  <div class="row" style="margin-top:10px">
+    <button id="go">Buscar video</button>
+    <button class="sec" id="pa" type="button">Pegar</button>
+    <button class="sec" id="cl" type="button">Limpiar</button>
+  </div>
+  <div class="opts">
+    <div class="dd" id="dd"><span class="lb">Calidad preferida</span>
+      <button type="button" class="ddb" id="ddb" aria-haspopup="listbox" aria-expanded="false"><span id="ddv">HD sin marca</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <ul class="ddm" id="ddm" role="listbox" aria-label="Calidad preferida">
+        <li role="option" tabindex="-1" data-v="hd" class="sel" aria-selected="true"><b>HD sin marca</b><small>La mejor calidad disponible</small></li>
+        <li role="option" tabindex="-1" data-v="sd" aria-selected="false"><b>Normal sin marca</b><small>Más liviano, ideal para celular</small></li>
+        <li role="option" tabindex="-1" data-v="wm" aria-selected="false"><b>Con marca de agua</b><small>Versión original de TikTok</small></li>
+      </ul>
+      <input type="hidden" id="q" value="hd">
+    </div>
+    <label><input type="checkbox" id="auto"> Descargar al buscar</label>
+    <label><input type="checkbox" id="hist" checked> Guardar historial</label>
+  </div>
+</div>
+
+<div class="res" id="res"></div>
+<div id="all" style="display:none;margin-top:14px"><button id="dall" style="width:100%">Descargar todos en la calidad elegida</button></div>
+
+<h2>Cómo usar</h2>
+<div class="grid">
+  <div><b>1. Copiá el enlace</b><p>En TikTok tocá Compartir y luego Copiar enlace.</p></div>
+  <div><b>2. Pegalo acá</b><p>Sirve con enlaces largos, vm.tiktok.com y vt.tiktok.com.</p></div>
+  <div><b>3. Elegí la calidad</b><p>HD, normal, con marca de agua, MP3, portada o fotos.</p></div>
+</div>
+
+<h2>Historial</h2>
+<div class="hist" id="hl"></div>
+<button class="sec" id="ch" style="margin-top:10px">Borrar historial</button>
+
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿Es gratis?</summary><p>Sí, sin registro y sin límite en esta página.</p></details>
+<details><summary>¿Por qué se abre el video en otra pestaña?</summary><p>Algunos navegadores bloquean la descarga directa. Mantené presionado el video o usá el menú, Guardar video como.</p></details>
+<details><summary>¿Funciona con videos privados?</summary><p>No, solo con videos públicos.</p></details>
+<details><summary>¿Qué calidad voy a obtener?</summary><p>Depende de lo que subió el creador, hasta 1080p cuando está disponible.</p></details>
+<details><summary>¿Puedo reutilizar videos de otros?</summary><p>Pedí permiso al creador y respetá los derechos de autor. Usalo solo con contenido propio o autorizado.</p></details>
+</main>
+
+<footer>
+  <div class="f"><span>Hecho por <b>NexoraUnk</b></span>
+  <a href="https://www.youtube.com/@NexoraUkn" target="_blank" rel="noopener noreferrer" aria-label="Canal de YouTube de NexoraUnk"><svg viewBox="0 0 28 20" width="28" height="20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#f00"/><path d="M11 5.5v9l8-4.5z" fill="#fff"/></svg></a></div>
+  <span>No afiliado a TikTok.</span>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var CONFIG={homeUrl:"https://www.nexoraunktools.com"};
+document.getElementById("brand").href=CONFIG.homeUrl||"/";
+const $=s=>document.querySelector(s),res=$('#res');
+let H=[],items=[];
+try{H=JSON.parse(localStorage.getItem('nx_tt')||'[]')}catch(e){}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2400)}
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>{n=+n||0;return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':n};
+const mb=b=>b?(b/1048576).toFixed(1)+' MB':'';
+const dur=s=>{s=+s||0;return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+const abs=u=>!u?'':/^https?:/.test(u)?u:'https://www.tikwm.com'+u;
+function wait(ms){return new Promise(r=>setTimeout(r,ms))}
+async function tf(url,opt,ms){const c=new AbortController(),t=setTimeout(()=>c.abort(),ms||15000);try{return await fetch(url,Object.assign({signal:c.signal},opt))}finally{clearTimeout(t)}}
+
+/* ===== Proveedores (en orden de prueba) ===== */
+const PROVIDERS=[
+ {name:'TikWM',async get(url){
+   const j=await(await tf('https://www.tikwm.com/api/?hd=1&url='+encodeURIComponent(url))).json();
+   if(j.code!==0||!j.data)throw new Error(j.msg||'TikWM sin datos');
+   return j.data}},
+ {name:'TikMate',async get(url){
+   const f=new FormData();f.append('url',url);
+   const j=await(await tf('https://api.tikmate.app/api/lookup',{method:'POST',body:f})).json();
+   if(!j.success)throw new Error('TikMate sin datos');
+   const b='https://tikmate.app/download/'+j.token+'/'+j.id;
+   return{id:j.id,title:j.author_name?('Video de '+j.author_name):'TikTok',cover:j.avatar,author:{nickname:j.author_name,unique_id:j.author_id,avatar:j.avatar},play:b+'.mp4',hdplay:b+'.mp4?hd=1',wmplay:'',duration:0}}}
+];
+async function getInfo(url){
+  let last;
+  for(const p of PROVIDERS){
+    for(let i=0;i<2;i++){
+      try{const d=await p.get(url);d._src=p.name;return d}
+      catch(e){last=e;if(/private|privado|not exist|removed/i.test(e.message))throw e;await wait(1100)}
+    }
+  }
+  throw last||new Error('Sin respuesta');
+}
+
+async function saveFile(url,name,bar){
+  try{
+    const r=await fetch(url);if(!r.ok)throw 0;
+    const len=+r.headers.get('content-length')||0,rd=r.body.getReader(),parts=[];let got=0;
+    if(bar)bar.parentElement.style.display='block';
+    for(;;){const{done,value}=await rd.read();if(done)break;parts.push(value);got+=value.length;if(bar&&len)bar.style.width=(got/len*100)+'%'}
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(parts));a.download=name;document.body.appendChild(a);a.click();a.remove();
+    toast('Descarga lista');
+  }catch(e){window.open(url,'_blank','noopener');toast('Se abrió en otra pestaña: guardalo desde ahí')}
+  if(bar)setTimeout(()=>{bar.parentElement.style.display='none';bar.style.width=0},1200);
+}
+function pick(d,q){
+  const base='tiktok_'+(d.author&&d.author.unique_id||'video')+'_'+d.id;
+  const o={hd:d.hdplay||d.play,sd:d.play||d.hdplay,wm:d.wmplay||d.hdplay||d.play}[q];
+  return o?{u:abs(o),n:base+(q==='wm'?'_marca':q==='hd'?'_HD':'')+'.mp4'}:null;
+}
+
+function card(d){
+  const user=d.author&&d.author.unique_id||'tiktok',base='tiktok_'+user+'_'+d.id;
+  const isImg=Array.isArray(d.images)&&d.images.length,mus=abs(d.music||(d.music_info&&d.music_info.play)),cov=abs(d.origin_cover||d.cover);
+  let b='';
+  if(!isImg){
+    if(d.hdplay)b+=`<button data-u="${esc(abs(d.hdplay))}" data-n="${base}_HD.mp4">⬇ HD sin marca<small>${mb(d.hd_size)||'Mejor calidad'}</small></button>`;
+    if(d.play)b+=`<button data-u="${esc(abs(d.play))}" data-n="${base}.mp4">⬇ Normal sin marca<small>${mb(d.size)||'MP4'}</small></button>`;
+    if(d.wmplay)b+=`<button class="wm" data-u="${esc(abs(d.wmplay))}" data-n="${base}_marca.mp4">⬇ Con marca de agua<small>${mb(d.wm_size)||'MP4 original'}</small></button>`;
+  }
+  if(mus)b+=`<button class="au2" data-u="${esc(mus)}" data-n="${base}.mp3">🎵 Audio MP3<small>${esc(((d.music_info&&d.music_info.title)||'Sonido original').slice(0,28))}</small></button>`;
+  if(cov)b+=`<button class="ct" data-u="${esc(cov)}" data-n="${base}_portada.jpg">🖼 Portada<small>JPG</small></button>`;
+  const dir=abs(d.hdplay||d.play||mus);
+  if(dir)b+=`<button class="ct" data-c="${esc(dir)}">🔗 Copiar enlace directo<small>Sin marca</small></button>`;
+  const el=document.createElement('div');el.className='item';
+  el.innerHTML=`<div class="top2"><img class="cov" src="${esc(abs(d.cover))}" alt="Portada" referrerpolicy="no-referrer"><div class="inf">
+  <div class="au"><img src="${esc(abs(d.author&&d.author.avatar))}" alt="" referrerpolicy="no-referrer"><div><b>${esc(d.author&&d.author.nickname)}</b><span>@${esc(user)}</span></div></div>
+  <p class="ti">${esc(d.title)||'Sin descripción'}</p>
+  <div class="st"><span class="chip">⏱ ${dur(d.duration)}</span><span class="chip">▶ ${fmt(d.play_count)}</span><span class="chip">❤ ${fmt(d.digg_count)}</span><span class="chip">💬 ${fmt(d.comment_count)}</span></div></div></div>
+  <div class="prog"><i></i></div><div class="dl">${b}</div>
+  ${isImg?`<p style="padding:0 16px 8px;color:var(--mu);margin:0">Presentación de fotos (${d.images.length})</p><div class="imgs">${d.images.map((u,i)=>`<img src="${esc(u)}" alt="Foto ${i+1}" loading="lazy" referrerpolicy="no-referrer">`).join('')}</div><div class="dl"><button data-all="1">⬇ Descargar todas las fotos</button></div>`:''}`;
+  el.addEventListener('click',async e=>{
+    const t=e.target.closest('[data-u],[data-c],[data-all]');if(!t)return;
+    const bar=el.querySelector('.prog i');
+    if(t.dataset.c){try{await navigator.clipboard.writeText(t.dataset.c);toast('Enlace copiado')}catch(x){prompt('Copiá el enlace:',t.dataset.c)}return}
+    if(t.dataset.all){const im=d.images;for(let i=0;i<im.length;i++){await saveFile(im[i],base+'_'+(i+1)+'.jpg');await wait(400)}return}
+    saveFile(t.dataset.u,t.dataset.n,bar);
+  });
+  return el;
+}
+
+function addHist(d,url){
+  if(!$('#hist').checked)return;
+  H=[{url,t:(d.title||'TikTok').slice(0,80),c:abs(d.cover)}].concat(H.filter(x=>x.url!==url)).slice(0,15);
+  try{localStorage.setItem('nx_tt',JSON.stringify(H))}catch(e){}
+  drawHist();
+}
+function drawHist(){
+  $('#hl').innerHTML=H.length?H.map((x,i)=>`<div class="hi" data-i="${i}" tabindex="0"><img src="${esc(x.c)}" alt="" referrerpolicy="no-referrer"><span>${esc(x.t)}</span><small>Reabrir</small></div>`).join(''):'<p style="color:var(--mu);margin:0">Todavía no hay descargas.</p>';
+}
+
+async function run(){
+  const links=[...new Set(($('#u').value.match(/https?:\/\/[^\s]*tiktok\.com[^\s]*/gi)||[]))];
+  if(!links.length){toast('Pegá un enlace válido de TikTok');return}
+  const b=$('#go');b.disabled=true;res.innerHTML='';items=[];$('#all').style.display='none';
+  for(let i=0;i<links.length;i++){
+    const ph=document.createElement('div');ph.className='box load';ph.innerHTML='<div class="sp"></div>Buscando video '+(i+1)+' de '+links.length+'...';res.appendChild(ph);
+    try{
+      const d=await getInfo(links[i]);
+      ph.replaceWith(card(d));addHist(d,links[i]);items.push(d);
+      if($('#auto').checked){const p=pick(d,$('#q').value);if(p&&!d.images)await saveFile(p.u,p.n)}
+    }catch(e){
+      ph.className='err';
+      ph.innerHTML='No se pudo procesar el enlace: '+esc(links[i])+'<br>Revisá que el video sea público e intentá de nuevo. ('+esc(e.message)+')<div class="row"><button id="rt">Reintentar</button></div>';
+      ph.querySelector('#rt').onclick=()=>{$('#u').value=links[i];run()};
+    }
+    if(i<links.length-1)await wait(1200);
+  }
+  if(items.length>1)$('#all').style.display='block';
+  b.disabled=false;
+}
+
+$('#go').onclick=run;
+$('#u').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();run()}});
+$('#pa').onclick=async()=>{try{$('#u').value=await navigator.clipboard.readText();run()}catch(e){toast('Pegá el enlace manualmente')}};
+$('#cl').onclick=()=>{$('#u').value='';res.innerHTML='';$('#all').style.display='none'};
+$('#ch').onclick=()=>{H=[];try{localStorage.removeItem('nx_tt')}catch(e){}drawHist();toast('Historial borrado')};
+const openHist=e=>{const i=e.target.closest('.hi');if(i){$('#u').value=H[i.dataset.i].url;run();scrollTo({top:0,behavior:'smooth'})}};
+$('#hl').onclick=openHist;
+$('#hl').addEventListener('keydown',e=>{if(e.key==='Enter')openHist(e)});
+$('#dall').onclick=async()=>{for(const d of items){if(d.images)continue;const p=pick(d,$('#q').value);if(p){await saveFile(p.u,p.n);await wait(600)}}};
+
+(function(){
+  const b=$('#ddb'),m=$('#ddm'),q=$('#q'),v=$('#ddv'),li=[...m.children];
+  const open=o=>{m.classList.toggle('on',o);b.setAttribute('aria-expanded',o);if(o)(m.querySelector('.sel')||li[0]).focus()};
+  const set=l=>{li.forEach(x=>{x.classList.toggle('sel',x===l);x.setAttribute('aria-selected',x===l)});q.value=l.dataset.v;v.textContent=l.querySelector('b').textContent;open(false);b.focus()};
+  b.onclick=()=>open(!m.classList.contains('on'));
+  li.forEach(l=>l.onclick=()=>set(l));
+  m.addEventListener('keydown',e=>{
+    const i=li.indexOf(document.activeElement);
+    if(e.key==='ArrowDown'){e.preventDefault();li[(i+1)%li.length].focus()}
+    else if(e.key==='ArrowUp'){e.preventDefault();li[(i+li.length-1)%li.length].focus()}
+    else if(e.key==='Enter'||e.key===' '){e.preventDefault();if(i>=0)set(li[i])}
+    else if(e.key==='Escape'||e.key==='Tab'){open(false);b.focus()}
+  });
+  document.addEventListener('click',e=>{if(!$('#dd').contains(e.target))open(false)});
+})();
+drawHist();
+</script>
+</body>
+</html>
